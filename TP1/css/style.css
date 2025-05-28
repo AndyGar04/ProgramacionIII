@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root{
+    --negrito: #111111;
+    --negro: #000;
+    --verde-chillon: #00ff00;
+    --verde-secundario: #187710;
+    --rojo-hover: #ff0000;
+    --blanco-letras: #ffffff;
+    --gris: #868686;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Poppins, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--negrito);
+}
+ /* <------------HEADER-----------------> */
+header{
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--negrito);
+    color: var(--blanco-letras);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--verde-chillon);
+    width: 100%;
+}
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--blanco-letras);
+}
+  
+  .logo-imagen {
+    height: 60px;
+}
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--blanco-letras);
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+  
+  .nav-links a:hover {
+    color: var(--verde-chillon);
+    transform: scale(1.05);
+}
+
+/* <--------INTRO-----------> */
+.intro {
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* <----------FOOTER----------> */
+footer {
+    background-color: var(--negrito);
+    color: var(--blanco-letras);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-contenido p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.iconos-redes-sociales {
+    display: flex;
+    gap: 20px;
+}
+
+.iconos-redes-sociales img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.iconos-redes-sociales img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding-top: 56.25%; /* Relación 16:9 */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
