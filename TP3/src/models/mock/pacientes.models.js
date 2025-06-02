@@ -1,6 +1,9 @@
 const Persona = require("./../mock/entities/paciente.entity.js");
 const Config = require("./../../config/config.js");
 const jwt = require("jsonwebtoken");
+//Borrar Despues
+console.log("SECRETE_WORD:", Config.secreteWord);
+
 class PacientesModel {
   constructor() {
     this.data = [];
@@ -32,6 +35,7 @@ class PacientesModel {
       }
     });
   }
+  
   validate(email, password) {
     return new Promise(async (resolve, reject) => {
       try {

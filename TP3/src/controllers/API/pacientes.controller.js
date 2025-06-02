@@ -9,12 +9,11 @@ class PacientesController {
 
       const token = await pacientesModel.validate(email, password);
     
-         res.status(200).json(token);
-   
+        res.status(200).json(token);
         
 
 
-     
+    
     } catch (error) {
       res.status(401).json({ message: error.message });
     }
@@ -23,6 +22,7 @@ class PacientesController {
   async list(req, res) {
     res.status(200).json(await pacientesModel.list());
   }
+
   async create(req, res) {
     const { dni, nombre, apellido, email } = req.body;
 
@@ -31,6 +31,7 @@ class PacientesController {
     const info = await pacientesModel.create(nuevoPaciente);
     res.status(200).json(info);
   }
+
   delete(req, res) {
     const id = req.params.id;
 
@@ -42,8 +43,9 @@ class PacientesController {
             res.status(404).json({message:`no existe el paciente conh el id:${id}`,error})}
         
     );
-   
+
   }
+
   update(req, res) {
     const id = req.params.id;
     const { dni, nombre, apellido, email } = req.body;

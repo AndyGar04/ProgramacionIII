@@ -1,5 +1,6 @@
 const  dotenv = require('dotenv');
 dotenv.config()
+
 class Config {
     constructor(){
         //TODO: verificar que existean las constantes del .env       
