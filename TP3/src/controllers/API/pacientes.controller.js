@@ -32,18 +32,19 @@ class PacientesController {
     res.status(200).json(info);
   }
 
-  delete(req, res) {
+  
+  async delete(req, res) {
     const id = req.params.id;
 
-    const pacienteBorrado = pacientesModel.delete(id)   ;
-    pacienteBorrado.then(paciente=>{
-        res.status(200).json(paciente);
-    }).catch(
-        error=>{
-            res.status(404).json({message:`no existe el paciente conh el id:${id}`,error})}
-        
-    );
-
+    try {
+      const pacienteEliminado = await pacientesModel.delete(id);
+      res.status(200).json({
+        mensaje: "Paciente eliminado correctamente",
+        paciente: pacienteEliminado,
+      });
+    } catch (error) {
+      res.status(404).json({ error: error.message });
+    }
   }
 
   update(req, res) {

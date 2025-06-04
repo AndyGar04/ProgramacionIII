@@ -2,7 +2,7 @@ const Persona = require("./../mock/entities/paciente.entity.js");
 const Config = require("./../../config/config.js");
 const jwt = require("jsonwebtoken");
 //Borrar Despues
-console.log("SECRETE_WORD:", Config.secreteWord);
+//console.log("SECRETE_WORD:", Config.secreteWord);
 
 class PacientesModel {
   constructor() {
@@ -72,13 +72,12 @@ class PacientesModel {
         paciente.id = this.id;
         this.id++;
         const pacienteEncontrado = this.data.find(p=>p.email===paciente.email)
-        if(pacienteEncontrado===null){
+        if(!pacienteEncontrado){
           this.data.push(paciente);
         }else{
           throw new Error("el paciente ya existe")
         }
             
-
         resolve(paciente);
       }catch(error){
         reject(error);
@@ -108,7 +107,7 @@ class PacientesModel {
   }
   // elimina el cliente con id = id
   delete(id) {
-    new Promise((resolve,reject)=>{
+    return new Promise((resolve,reject)=>{
       try {
        const pacienteEncontrado = this.data.find((p) => p.id == id);
        if(!pacienteEncontrado){
