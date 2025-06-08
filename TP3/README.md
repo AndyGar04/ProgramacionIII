@@ -67,18 +67,19 @@ El sistema web simula el funcionamiento interno de una clínica, permitiendo al 
 - **Express Router** para manejar rutas específicas del frontend (`src/routes/web`).
 - **Mock de datos** en memoria para pacientes y turnos (`src/models/mock/`).
 
+
 ## Funcionalidades principales
 
 ### Pacientes
 
 | Método | Ruta                      | Descripción                 |<br>
 
-| POST   | `/api/v1/pacientes`       | Crear paciente              |<br>
-| GET    | `/api/v1/pacientes`       | Muestra todos los pacientes |<br>
-| GET    | `/api/v1/pacientes/:id`   | Obtener paciente por ID     |<br>
-| PUT    | `/api/v1/pacientes/:id`   | Actualizar paciente         |<br>
-| DELETE | `/api/v1/pacientes/:id`   | Eliminar paciente           |<br>
-| POST   | `/api/v1/pacientes/login` | Login, retorna el token     |<br>
+| POST   | `/api/pacientes`       | Crear paciente              |<br>
+| GET    | `/api/pacientes`       | Muestra todos los pacientes |<br>
+| GET    | `/api/pacientes/:id`   | Obtener paciente por ID     |<br>
+| PUT    | `/api/pacientes/:id`   | Actualizar paciente         |<br>
+| DELETE | `/api/pacientes/:id`   | Eliminar paciente           |<br>
+| POST   | `/api/pacientes/login` | Login, retorna el token     |<br>
 
 ---
 
@@ -86,17 +87,17 @@ El sistema web simula el funcionamiento interno de una clínica, permitiendo al 
 
 | Método | Ruta                          | Descripción                    |<br>
 
-| POST   | `/api/v1/turnos`              | Crear turno                    |<br>
-| GET    | `/api/v1/turnos/:idPaciente`  | Obtener turnos de un paciente  |<br>
-| PUT    | `/api/v1/turnos/:id`          | Actualizar un turno            |<br>
-| DELETE | `/api/v1/turnos/:idTurno`     | Eliminar un turno              |<br>
+| POST   | `/api/turnos`              | Crear turno                    |<br>
+| GET    | `/api/turnos/:idPaciente`  | Obtener turnos de un paciente  |<br>
+| PUT    | `/api/turnos/:id`          | Actualizar un turno            |<br>
+| DELETE | `/api/turnos/:idTurno`     | Eliminar un turno              |<br>
 
 ---
 
 ## Autenticación
 
 - Para crear, modificar o eliminar turnos, se requiere un **token JWT**.
-- Se obtiene haciendo `POST /api/v1/pacientes/login` con email y contraseña.
+- Se obtiene haciendo `POST /api/pacientes/login` con email y contraseña.
 
 ---
 
@@ -126,4 +127,3 @@ Primero generar el token en el header para los endpoints protegidos:
 ```bash
 npm install
 npm run start
-
