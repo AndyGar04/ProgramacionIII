@@ -17,17 +17,55 @@ Realizado para el TP3.
 
 ## 🗂️ Estructura de carpetas
 
--src/ <br>
-├── controllers/ <br>
-├── models/ <br>
-│ └── mock/ <br>
-├── routes/ <br>
-├── middlewares/ <br>
-├── validators/ <br>
-└── index.js <br>
+```
+src/
+├── views/
+│   ├── pacientes/
+│   ├── turnos/
+│   ├── partials/
+│   └── index.ejs
+├── public/
+│   ├── stylesheets/
+│   └── images/
+```
 
 
 ---
+
+
+#  Documentación del Frontend Web
+
+##  Funcionalidades del sistema web
+
+El sistema web simula el funcionamiento interno de una clínica, permitiendo al personal administrativo interactuar con turnos y pacientes de forma sencilla mediante una interfaz web. Las funcionalidades principales son:
+
+###  Alta de pacientes
+- Desde la sección de pacientes, el personal puede registrar un nuevo paciente mediante un formulario.
+- Los datos son enviados a través de un formulario HTML (renderizado con EJS) y procesados por el backend mock.
+
+###  Alta de turnos
+- Se puede registrar un nuevo turno seleccionando un paciente existente, una fecha y una hora.
+- La vista correspondiente se encuentra en `views/turnos/nuevoTurno.ejs`.
+
+###  Baja de pacientes
+- Se puede eliminar un paciente directamente desde la vista de listado de pacientes.
+- La acción envía una petición HTTP `DELETE` al servidor y elimina al paciente del mock.
+
+###  Baja de turnos
+- Se puede cancelar un turno existente mediante un botón de eliminar desde el listado de turnos.
+- Esto elimina el turno de la lista mock del backend.
+
+##  Organización de vistas
+
+- `views/pacientes/`: Contiene las vistas para visualizar, crear y eliminar pacientes.
+- `views/turnos/`: Contiene las vistas para visualizar y crear turnos.
+- `views/partials/`: Contiene fragmentos reutilizables como cabeceras o menús de navegación.
+- `views/index.ejs`: Página principal o de bienvenida al sistema.
+
+## 🛠️ Tecnologías utilizadas
+- **EJS** como motor de vistas para renderizar HTML dinámico.
+- **Express Router** para manejar rutas específicas del frontend (`src/routes/web`).
+- **Mock de datos** en memoria para pacientes y turnos (`src/models/mock/`).
 
 ## Funcionalidades principales
 
