@@ -1,25 +1,21 @@
-// backend/models/index.js
 const { Sequelize } = require('sequelize');
-const config = require('../config/database');
-
-const env = process.env.NODE_ENV || 'development';
-const dbConfig = config[env];
+require('dotenv').config();
 
 const sequelize = new Sequelize(
-  dbConfig.database,
-  dbConfig.username,
-  dbConfig.password,
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    host: dbConfig.host,
-    port: dbConfig.port,
-    dialect: dbConfig.dialect,
-    logging: dbConfig.logging,
-    pool: dbConfig.pool,
-    dialectOptions: dbConfig.dialectOptions
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: 'postgres',
+    logging: process.env.DEBUG === 'true' ? console.log : false,
   }
 );
 
-module.exports = {
-  sequelize,
-  Sequelize
-};
+// Prueba de conexión
+sequelize.authenticate()
+  .then(() => console.log('🔗 Conectado a PostgreSQL con Sequelize'))
+  .catch((err) => console.error('❌ Error de conexión:', err));
+
+module.exports = { sequelize };

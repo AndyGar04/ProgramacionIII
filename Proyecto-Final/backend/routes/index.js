@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+const productosRoutes = require('./productos.routes');
+router.use('/productos', productosRoutes);
+
 // Ruta de prueba
 router.get('/health', (req, res) => {
   res.status(200).json({
