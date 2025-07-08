@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config();
 
 const sequelize = new Sequelize(
@@ -9,13 +9,39 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: 'postgres',
-    logging: process.env.DEBUG === 'true' ? console.log : false,
+    logging: false
   }
 );
 
-// Prueba de conexión
-sequelize.authenticate()
-  .then(() => console.log('🔗 Conectado a PostgreSQL con Sequelize'))
-  .catch((err) => console.error('❌ Error de conexión:', err));
+// Cargar modelos
+const Producto = require('./producto.model')(sequelize, DataTypes);
+const Categoria = require('./categoria.model')(sequelize, DataTypes);
+const Movimiento = require('./movimiento.model')(sequelize, DataTypes);
 
-module.exports = { sequelize };
+// Asociaciones
+Categoria.hasMany(Producto, {
+  foreignKey: 'categoriaId',
+  as: 'productos'
+});
+
+Producto.belongsTo(Categoria, {
+  foreignKey: 'categoriaId',
+  as: 'categoria'
+});
+
+Producto.hasMany(Movimiento, {
+  foreignKey: 'productoId',
+  as: 'movimientos'
+});
+
+Movimiento.belongsTo(Producto, {
+  foreignKey: 'productoId',
+  as: 'producto'
+});
+
+module.exports = {
+  sequelize,
+  Producto,
+  Categoria,
+  Movimiento
+};

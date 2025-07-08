@@ -1,8 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
+const movimientosRoutes = require('./movimientos.routes');
+router.use('/movimientos', movimientosRoutes);
+
 const productosRoutes = require('./productos.routes');
 router.use('/productos', productosRoutes);
+
+const categoriasRoutes = require('./categorias.routes');
+router.use('/categorias', categoriasRoutes);
+
 
 // Ruta de prueba
 router.get('/health', (req, res) => {
@@ -25,5 +32,6 @@ router.get('/test', (req, res) => {
     }
   });
 });
+
 
 module.exports = router;

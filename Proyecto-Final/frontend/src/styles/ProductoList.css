@@ -1,0 +1,191 @@
+/* styles.css */
+
+/* Variables CSS para los colores */
+:root {
+  --color-blue-50: #eff6ff; /* Muy claro */
+  --color-blue-100: #dbeafe; /* Azul claro para encabezados */
+  --color-blue-700: #1d4ed8; /* Azul oscuro para texto de encabezado */
+  --color-blue-800: #1e40af; /* Azul más oscuro para títulos */
+  --color-gray-50: #f9fafb; /* Gris muy claro para hover */
+  --color-gray-100: #f3f4f6; /* Gris claro para divisores */
+  --color-gray-200: #e5e7eb; /* Gris medio para bordes */
+  --color-gray-600: #4b5563; /* Gris oscuro para texto secundario */
+  --color-gray-800: #1f2937; /* Gris muy oscuro para texto principal */
+  --color-red-500: #ef4444; /* Rojo para errores */
+}
+
+/* Contenedor principal */
+.producto-list-container {
+  padding: 2rem; /* p-8 */
+  background-color: var(--color-blue-50); /* bg-blue-50 */
+  min-height: 100vh;
+}
+
+/* Título */
+.producto-list-title {
+  font-size: 2.25rem; /* text-3xl */
+  font-weight: 800; /* font-extrabold */
+  margin-bottom: 1.5rem; /* mb-6 */
+  color: var(--color-blue-800); /* text-blue-800 */
+  text-align: center;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: var(--color-red-500); /* text-red-500 */
+  font-weight: 500; /* font-medium */
+  padding: 1.5rem; /* p-6 */
+  text-align: center;
+}
+
+/* Mensaje "No hay productos" */
+.no-products-message {
+  color: var(--color-gray-600); /* text-gray-600 */
+  font-size: 1.125rem; /* text-lg */
+  text-align: center;
+  margin-top: 2.5rem; /* mt-10 */
+}
+
+/* Contenedor de la tabla */
+.table-wrapper {
+  background-color: #ffffff; /* bg-white */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  border: 1px solid var(--color-gray-200); /* border border-gray-200 */
+}
+
+/* Tabla */
+.product-table {
+  min-width: 100%;
+  border-collapse: collapse; /* Para evitar dobles bordes */
+}
+
+/* Encabezado de la tabla */
+.product-table-header {
+  background-color: var(--color-blue-100); /* bg-blue-100 */
+}
+
+.product-table-header th {
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  text-align: left;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600; /* font-semibold */
+  color: var(--color-blue-700); /* text-blue-700 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+}
+
+/* Filas del cuerpo de la tabla */
+.product-table-body tr {
+  border-top: 1px solid var(--color-gray-100); /* divide-y divide-gray-100 (se aplica a la fila superior) */
+  transition: background-color 0.15s ease-in-out; /* transition duration-150 ease-in-out */
+}
+
+.product-table-body tr:hover {
+  background-color: var(--color-gray-50); /* hover:bg-gray-50 */
+}
+
+/* Celdas del cuerpo de la tabla */
+.product-table-body td {
+  padding: 1rem 1.5rem; /* px-6 py-4 */
+  white-space: nowrap; /* whitespace-nowrap */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.product-table-body td:nth-child(1) { /* Nombre del producto */
+  color: var(--color-gray-800); /* text-gray-800 */
+}
+
+.product-table-body td:nth-child(2) { /* Categoría */
+  color: var(--color-gray-600); /* text-gray-600 */
+}
+
+.product-table-body td:nth-child(3) { /* Precio */
+  color: var(--color-gray-800); /* text-gray-800 */
+  font-weight: 500; /* font-medium */
+}
+
+.product-table-body td:nth-child(4) { /* Stock */
+  color: var(--color-gray-600); /* text-gray-600 */
+}
+
+.btn-primary {
+  display: inline-flex; /* Permite alinear el ícono y el texto */
+  align-items: center; /* Centra verticalmente el contenido */
+  gap: 0.5rem; /* Espacio entre el ícono y el texto */
+  padding: 0.75rem 1.5rem; /* py-3 px-6 - Un buen padding para que no se vea apretado */
+  background-color: #2563eb; /* bg-blue-600 - Un azul vibrante */
+  color: #ffffff; /* text-white */
+  font-weight: 600; /* font-semibold - Un poco más de peso para el texto */
+  border-radius: 0.75rem; /* rounded-xl - Bordes redondeados más pronunciados */
+  border: none; /* Sin borde */
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md - Una sombra sutil */
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out; /* Transiciones suaves */
+  margin: 0.5rem;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 - Azul más oscuro al pasar el mouse */
+  transform: translateY(-1px); /* Un pequeño levantamiento para el efecto */
+}
+
+.btn-primary:active {
+  background-color: #1e40af; /* Azul aún más oscuro al hacer click */
+  transform: translateY(0); /* Vuelve a su posición original */
+  box-shadow: none; /* Quita la sombra al hacer click */
+}
+
+.btn-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #10b981; /* bg-emerald-500 - Un verde para editar */
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  margin: 0.5rem;
+}
+
+.btn-edit:hover {
+  background-color: #059669; /* hover:bg-emerald-600 - Verde más oscuro al pasar el mouse */
+  transform: translateY(-1px);
+}
+
+.btn-edit:active {
+  background-color: #047857; /* Verde aún más oscuro al hacer click */
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-delete {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ef4444; /* bg-red-500 - Un rojo para eliminar */
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  margin: 0.5rem;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626; /* hover:bg-red-600 - Rojo más oscuro al pasar el mouse */
+  transform: translateY(-1px);
+}
+
+.btn-delete:active {
+  background-color: #b91c1c; /* Rojo aún más oscuro al hacer click */
+  transform: translateY(0);
+  box-shadow: none;
+}

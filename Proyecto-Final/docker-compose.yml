@@ -62,7 +62,7 @@ services:
     container_name: app_frontend
     restart: unless-stopped
     environment:
-      - REACT_APP_API_URL=http://localhost:3001/api
+      - REACT_APP_API_URL=http://backend:3001/api
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
       - FAST_REFRESH=true

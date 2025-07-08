@@ -1,0 +1,112 @@
+/* ProductoCrear Styles (styles.css) */
+
+/* Contenedor principal del formulario */
+.form-page-container {
+  padding: 2rem; /* p-8 */
+  background-color: var(--color-blue-50); /* bg-blue-50 */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor del formulario */
+.form-card {
+  background-color: #ffffff; /* bg-white */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  width: 100%;
+  max-width: 32rem; /* max-w-lg (512px) */
+  border: 1px solid var(--color-gray-200); /* border border-gray-200 */
+}
+
+/* Título del formulario */
+.form-title {
+  font-size: 2.25rem; /* text-3xl */
+  font-weight: 800; /* font-extrabold */
+  margin-bottom: 1.5rem; /* mb-6 */
+  color: var(--color-blue-800); /* text-blue-800 */
+  text-align: center;
+}
+
+/* Mensaje de error del formulario */
+.form-error-message {
+  background-color: #fee2e2; /* bg-red-100 */
+  color: #b91c1c; /* text-red-700 */
+  padding: 0.75rem; /* p-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center;
+  font-weight: 500; /* font-medium */
+}
+
+/* Contenedor de los campos del formulario */
+.form-grid {
+  display: grid;
+  gap: 1.25rem; /* gap-5 */
+}
+
+/* Estilo base para inputs, textareas y selects */
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border: 1px solid var(--color-gray-300); /* border border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  color: var(--color-gray-800); /* text-gray-800 */
+  transition: all 0.15s ease-in-out; /* transition duration-150 ease-in-out */
+}
+
+/* Estilo de focus para inputs, textareas y selects */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-blue-200); /* focus:ring-2 focus:ring-blue-200 */
+  border-color: var(--color-blue-300); /* focus:border-blue-300 */
+}
+
+/* Estilo específico para textarea */
+.form-textarea {
+  resize: vertical; /* resize-y */
+  min-height: 5rem; /* Puedes ajustar esto */
+}
+
+/* Contenedor de botones del formulario */
+.form-buttons-container {
+  display: flex;
+  justify-content: flex-end; /* justify-end */
+  gap: 0.75rem; /* gap-3 */
+  margin-top: 1rem; /* mt-4 */
+}
+
+/* Estilo base para los botones del formulario */
+.form-button {
+  padding: 0.5rem 1.5rem; /* px-6 py-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  color: #ffffff; /* text-white */
+  font-weight: 500; /* font-medium */
+  transition: background-color 0.15s ease-in-out; /* transition duration-150 ease-in-out */
+  cursor: pointer;
+  border: none; /* Asegurar que no tengan borde predeterminado */
+}
+
+/* Botón Guardar */
+.form-button.save {
+  background-color: #2563eb; /* bg-blue-600 */
+}
+
+.form-button.save:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+/* Botón Cancelar */
+.form-button.cancel {
+  background-color: #9ca3af; /* bg-gray-400 */
+}
+
+.form-button.cancel:hover {
+  background-color: #6b7280; /* hover:bg-gray-500 */
+}
